@@ -3,6 +3,10 @@
 .idea/inspectionProfiles/
 .idea/misc.xml
 .idea/modules.xml
-index.py
 venv/
 .idea/vcs.xml
+app/__pycache__/
+terraform/.terraform.lock.hcl
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
