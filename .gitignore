@@ -1,2 +1,8 @@
-# Created by .ignore support plugin (hsz.mobi)
-/venv
+.idea/.gitignore
+.idea/devops_techtask.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+index.py
+venv/
+.idea/vcs.xml
