@@ -15,29 +15,29 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_python" {
-  ami           = var.ami
-  availability_zone = "${var.region}${var.aws_region_az}"
-  instance_type = var.instance
+  ami                         = var.ami
+  availability_zone           = "${var.region}${var.aws_region_az}"
+  instance_type               = var.instance
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.sg.id]
   subnet_id                   = aws_subnet.subnet.id
   key_name                    = aws_key_pair.deployer.key_name
 
-connection {
-  host = aws_instance.app_python.public_ip
-  type = "ssh"
-  private_key = file(var.private_key)
-  user = var.ansible_user
-  timeout = "10m"
-}
+  connection {
+    host        = aws_instance.app_python.public_ip
+    type        = "ssh"
+    private_key = file(var.private_key)
+    user        = var.ansible_user
+    timeout     = "10m"
+  }
 
-provisioner "remote-exec" {
-  inline = ["sudo apt update && sudo apt install python3"]
-}
+  provisioner "remote-exec" {
+    inline = ["sudo apt update && sudo apt install python3"]
+  }
 
-provisioner "local-exec" {
-  command = "ansible-playbook -u ${var.ansible_user} -i '${aws_instance.app_python.public_ip},' --private-key ${var.private_key} ../ansible/setup_app.yml"
-}
+  provisioner "local-exec" {
+    command = "ansible-playbook -u ${var.ansible_user} -i '${aws_instance.app_python.public_ip},' --private-key ${var.private_key} ../ansible/setup_app.yml"
+  }
 
   tags = {
     Name = "app_python"
