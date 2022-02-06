@@ -29,7 +29,7 @@ resource "aws_security_group" "sg" {
     {
       description      = "SSH"
       from_port        = var.sg_ingress_ssh
-      protocol         = var.sg_ingress_proto_ssh
+      protocol         = var.sg_ingress_proto_tcp
       to_port          = var.sg_ingress_ssh
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = []

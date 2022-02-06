@@ -71,11 +71,7 @@ variable "sg_ingress_proto_tcp" {
   default     = "tcp"
 }
 
-variable "sg_ingress_proto_ssh" {
-  description = "Protocol used for the ingress rule"
-  type        = string
-  default     = "ssh"
-}
+
 
 variable "sg_ingress_ssh" {
   description = "Port used for the ingress rule"
