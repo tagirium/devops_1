@@ -15,21 +15,22 @@ resource "aws_security_group" "sg" {
 //    cidr_blocks = ["0.0.0.0/0"]
 //  }
 
-  ingress = [{
+  ingress {
     description      = "My public IP"
-    protocol         = var.sg_ingress_proto
-    from_port        = var.sg_ingress_all_start
-    to_port          = var.sg_ingress_all_end
-    cidr_blocks = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = []
-    prefix_list_ids  = []
-    security_groups  = []
-    self             = false
+    protocol         = var.sg_ingress_proto_tcp
+    from_port        = var.sg_ingress_all_start_tcp
+    to_port          = var.sg_ingress_all_end_tcp
+  }
 
-  }]
+  ingress {
+    description = "SSH"
+    from_port = var.sg_ingress_ssh
+    protocol = var.sg_ingress_proto_ssh
+    to_port = var.sg_ingress_ssh
+  }
 
 
-  egress = [{
+  egress {
     description      = "All traffic"
     protocol         = var.sg_egress_proto
     from_port        = var.sg_egress_all
@@ -40,7 +41,7 @@ resource "aws_security_group" "sg" {
     security_groups  = []
     self             = false
 
-  }]
+  }
 
   tags = {
     "Owner" = var.owner

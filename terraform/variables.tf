@@ -10,12 +10,7 @@ variable "owner" {
 variable "region" {
   default = "us-east-2"
 }
-variable "aws_access_key_id" {
-  default ="AKIATNNPVX4VRHNLRLHD"
-}
-variable "aws_secret_access_key" {
-  default = "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"
-}
+
 variable "aws_region_az" {
   description = "AWS region availability zone"
   type        = string
@@ -70,10 +65,16 @@ variable "vpc_dns_hostnames" {
 # Variables for Security Group
 ######################################
 
-variable "sg_ingress_proto" {
+variable "sg_ingress_proto_tcp" {
   description = "Protocol used for the ingress rule"
   type        = string
   default     = "tcp"
+}
+
+variable "sg_ingress_proto_ssh" {
+  description = "Protocol used for the ingress rule"
+  type        = string
+  default     = "ssh"
 }
 
 variable "sg_ingress_ssh" {
@@ -82,16 +83,16 @@ variable "sg_ingress_ssh" {
   default     = "22"
 }
 
-variable "sg_ingress_all_start" {
+variable "sg_ingress_all_start_tcp" {
   description = "Port used for the ingress rule"
   type        = string
-  default     = "0"
+  default     = "80"
 }
 
-variable "sg_ingress_all_end" {
+variable "sg_ingress_all_end_tcp" {
   description = "Port used for the ingress rule"
   type        = string
-  default     = "65535"
+  default     = "80"
 }
 
 variable "sg_egress_proto" {
