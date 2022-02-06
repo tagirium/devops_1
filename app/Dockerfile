@@ -1,11 +1,11 @@
-FROM python:3.8-alpine
+FROM python:3.8
 
 WORKDIR /
 
 COPY requirements.txt requirements.txt
 COPY ./app .
 
-RUN pip3 install pip==19.0.3 --no-cache-dir && pip3 install -r requirements.txt --no-cache-dir && adduser -D user
+RUN pip3 install pip==22.0.3 --no-cache-dir && pip3 install -r requirements.txt --no-cache-dir && adduser user
 
 
 
