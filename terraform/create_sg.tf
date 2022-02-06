@@ -1,6 +1,6 @@
 resource "aws_security_group" "sg" {
   vpc_id = aws_vpc.vpc.id
-  name   = "very welcoming group"
+  name   = "security group"
 //  ingress {
 //    from_port   = 0
 //    to_port     = 65535
@@ -26,6 +26,13 @@ resource "aws_security_group" "sg" {
     security_groups  = []
     self             = false
 
+  }]
+
+  ingress = [{
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["${var.PvtIp}"]
   }]
 
   egress = [{

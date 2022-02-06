@@ -30,7 +30,7 @@ connection {
   type = "ssh"
   private_key = file(var.private_key)
   user = var.ansible_user
-  timeout = "2m"
+  timeout = "10m"
 }
 
 provisioner "remote-exec" {
