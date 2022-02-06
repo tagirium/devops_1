@@ -3,4 +3,5 @@ services:
   web:
     image: tagirium/techtask:${TAG:-latest}
     ports:
-      - "8080:8000"
+      - "80:8000"
+      - "443:8000"

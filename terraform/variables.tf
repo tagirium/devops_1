@@ -79,7 +79,7 @@ variable "sg_ingress_ssh" {
   default     = "22"
 }
 
-/*variable "sg_ingress_all_start_http" {
+variable "sg_ingress_all_start_http" {
   description = "Port used for the ingress rule"
   type        = string
   default     = "80"
@@ -89,18 +89,18 @@ variable "sg_ingress_all_end_http" {
   description = "Port used for the ingress rule"
   type        = string
   default     = "80"
-}*/
+}
 
 variable "sg_ingress_all_start_https" {
   description = "Port used for the ingress rule"
   type        = string
-  default     = "8080"
+  default     = "443"
 }
 
 variable "sg_ingress_all_end_https" {
   description = "Port used for the ingress rule"
   type        = string
-  default     = "8080"
+  default     = "443"
 }
 
 variable "sg_egress_proto" {

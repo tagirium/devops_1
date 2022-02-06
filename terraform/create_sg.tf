@@ -2,7 +2,7 @@ resource "aws_security_group" "sg" {
   vpc_id = aws_vpc.vpc.id
   name   = "security group"
 
-  ingress = [/*{
+  ingress = [{
     description      = "My public IP for HTTP"
     protocol         = var.sg_ingress_proto_tcp
     from_port        = var.sg_ingress_all_start_http
@@ -12,7 +12,7 @@ resource "aws_security_group" "sg" {
     prefix_list_ids  = []
     security_groups  = []
     self             = false
-    },*/
+    },
     {
       description      = "SSH"
       from_port        = var.sg_ingress_ssh
