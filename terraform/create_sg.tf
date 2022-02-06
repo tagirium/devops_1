@@ -1,31 +1,18 @@
 resource "aws_security_group" "sg" {
   vpc_id = aws_vpc.vpc.id
   name   = "security group"
-  //  ingress {
-  //    from_port   = 0
-  //    to_port     = 65535
-  //    protocol    = "tcp"
-  //    cidr_blocks = ["0.0.0.0/0"]
-  //  }
-  //
-  //  egress {
-  //    from_port   = 0
-  //    to_port     = 65535
-  //    protocol    = "tcp"
-  //    cidr_blocks = ["0.0.0.0/0"]
-  //  }
 
-  ingress = [{
-    description      = "My public IP"
+  ingress = [/*{
+    description      = "My public IP for HTTP"
     protocol         = var.sg_ingress_proto_tcp
-    from_port        = var.sg_ingress_all_start_tcp
-    to_port          = var.sg_ingress_all_end_tcp
+    from_port        = var.sg_ingress_all_start_http
+    to_port          = var.sg_ingress_all_end_http
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = []
     prefix_list_ids  = []
     security_groups  = []
     self             = false
-    },
+    },*/
     {
       description      = "SSH"
       from_port        = var.sg_ingress_ssh
@@ -36,7 +23,19 @@ resource "aws_security_group" "sg" {
       prefix_list_ids  = []
       security_groups  = []
       self             = false
-  }]
+    },
+    {
+      description      = "My public IP for HTTPS"
+      protocol         = var.sg_ingress_proto_tcp
+      from_port        = var.sg_ingress_all_start_https
+      to_port          = var.sg_ingress_all_end_https
+      cidr_blocks      = ["0.0.0.0/0"]
+      ipv6_cidr_blocks = []
+      prefix_list_ids  = []
+      security_groups  = []
+      self             = false
+    }
+  ]
 
 
   egress {
