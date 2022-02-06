@@ -15,19 +15,19 @@ resource "aws_security_group" "sg" {
 //    cidr_blocks = ["0.0.0.0/0"]
 //  }
 
-  ingress {
+  ingress =[{
     description      = "My public IP"
     protocol         = var.sg_ingress_proto_tcp
     from_port        = var.sg_ingress_all_start_tcp
     to_port          = var.sg_ingress_all_end_tcp
-  }
+  }]
 
-  ingress {
+  ingress = [{
     description = "SSH"
     from_port = var.sg_ingress_ssh
     protocol = var.sg_ingress_proto_ssh
     to_port = var.sg_ingress_ssh
-  }
+  }]
 
 
   egress {
