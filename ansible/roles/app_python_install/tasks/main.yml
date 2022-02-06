@@ -24,7 +24,7 @@
 
 - name: Copy docker-compose
   copy:
-    src: ../../../../app_python/docker-compose.yml
+    src: ../../../../app/docker-compose.yml
     dest: /opt/python_app/docker-compose.yml
     mode: u=rw,g=r,o=r
 

@@ -31,11 +31,11 @@ variable "instance_count" {
 }
 
 variable "public_key" {
-  default = "C:\\Users\\tagir\\PycharmProjects\\devops_techtask\\terraform\\aws_key.pub"
+  default = "./aws_key.pub"
 }
 
 variable "private_key" {
-  default = "C:\\Users\\tagir\\PycharmProjects\\devops_techtask\\terraform\\aws_key"
+  default = "./aws_key"
 }
 
 variable "ansible_user" {

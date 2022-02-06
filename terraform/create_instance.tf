@@ -38,7 +38,7 @@ provisioner "remote-exec" {
 }
 
 provisioner "local-exec" {
-  command = "ansible-playbook -u ${var.ansible_user} -i '${aws_instance.app_python.public_ip},' --private-key ${var.private_key} ../../ansible/playbooks/install_docker.yml"
+  command = "ansible-playbook -u ${var.ansible_user} -i '${aws_instance.app_python.public_ip},' --private-key ${var.private_key} ../ansible/setup_app.yml"
 }
 
   tags = {
