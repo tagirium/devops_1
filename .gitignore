@@ -3,6 +3,7 @@
 .idea/inspectionProfiles/
 .idea/misc.xml
 .idea/modules.xml
+.idea/.gitignore
 venv/
 .idea/vcs.xml
 app/__pycache__/
