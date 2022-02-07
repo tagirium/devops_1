@@ -18,7 +18,8 @@ To get a local copy up and running follow these simple steps.
 * Install [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
 * Install [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide)
 
-### Installation
+### Installation 
+0. Clone this repository
 1. Set up AWS environmental variables:
     ```sh
         export AWS_ACCESS_KEY_ID=$YOUR_AWS_ACCESS_KEY$
