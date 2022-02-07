@@ -13,6 +13,13 @@
     state: directory
     mode: 0755
 
+- name: Install docker libraries
+  become: true
+  pip:
+    name:
+      - docker==5.0.2
+    state: present
+
 - name: Copy docker-compose
   template:
     src: docker-compose.yml.j2
