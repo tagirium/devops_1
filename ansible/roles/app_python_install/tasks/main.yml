@@ -17,7 +17,8 @@
   become: true
   pip:
     name:
-      - docker==5.0.2
+      - docker
+      - docker-compose
     state: present
 
 - name: Copy docker-compose
