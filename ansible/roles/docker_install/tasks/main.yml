@@ -1,5 +1,5 @@
 ---
-name: Install Docker.
+- name: Install Docker.
   package:
     name: "{{ docker_package }}"
     state: "{{ docker_package_state }}"
