@@ -31,10 +31,6 @@ resource "aws_instance" "app_python" {
     timeout     = "10m"
   }
 
-  provisioner "remote-exec" {
-    inline = ["sudo apt update && sudo apt install python3"]
-  }
-
   provisioner "local-exec" {
     command = "ansible-playbook -u ${var.ansible_user} -i '${aws_instance.app_python.public_ip},' --private-key ${var.private_key} ../ansible/setup_app.yml"
   }
