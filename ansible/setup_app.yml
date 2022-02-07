@@ -2,4 +2,6 @@
 - hosts: all
 
   roles:
+    - role: docker_install
+      - become: True
     - role: app_python_install

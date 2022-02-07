@@ -32,7 +32,7 @@ resource "aws_instance" "app_python" {
   }
 
   provisioner "remote-exec" {
-    inline = ["sudo apt update && sudo apt install python3-pip"]
+    inline = ["sudo apt update && sudo apt update  && sudo apt install python3-pip -y"]
   }
 
   provisioner "local-exec" {
