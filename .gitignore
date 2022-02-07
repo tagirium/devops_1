@@ -10,3 +10,5 @@ terraform/.terraform.lock.hcl
 terraform/.terraform/
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
+.idea/codeStyles/
+app/app/__pycache__/

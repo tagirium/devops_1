@@ -23,17 +23,6 @@ resource "aws_security_group" "sg" {
       prefix_list_ids  = []
       security_groups  = []
       self             = false
-    },
-    {
-      description      = "My public IP for HTTPS"
-      protocol         = var.sg_ingress_proto_tcp
-      from_port        = var.sg_ingress_all_start_https
-      to_port          = var.sg_ingress_all_end_https
-      cidr_blocks      = ["0.0.0.0/0"]
-      ipv6_cidr_blocks = []
-      prefix_list_ids  = []
-      security_groups  = []
-      self             = false
     }
   ]
 

@@ -23,8 +23,8 @@
     mode: 0755
 
 - name: Copy docker-compose
-  copy:
-    src: ../../../../app/docker-compose.yml
+  template:
+    src: docker-compose.yml.j2
     dest: /opt/python_app/docker-compose.yml
     mode: u=rw,g=r,o=r
 
@@ -35,6 +35,3 @@
     recreate: always
     state: present
     project_src: /opt/python_app/
-  environment:
-    TAG: "{{ python_app_tag }}"
-    OUTER_PORT: "{{python_app_outer_port}}"

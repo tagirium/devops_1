@@ -1,7 +1,0 @@
-version: "3.3"
-services:
-  web:
-    image: tagirium/techtask:${TAG:-latest}
-    ports:
-      - "80:8000"
-      - "443:8000"
