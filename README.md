@@ -20,7 +20,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation 
 0. Clone this repository
-1. Set up AWS environmental variables:
+1. Set up [AWS environmental variables](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html):
     ```sh
         export AWS_ACCESS_KEY_ID=$YOUR_AWS_ACCESS_KEY$
         export AWS_SECRET_ACCESS_KEY=$YOUR_AWS_SECRET_ACCESS_KEY$
